@@ -15,5 +15,8 @@ jobs:
                 ls -lha
                 cat README.md || echo "README.md not found"
 
+            - name: Install cowsay
+              run: sudo apt-get install -y cowsay
+
             - name: Generate ASCII Artwork
               run: cowsay -f dragon "Run for cover, Iam a DRAGON... RAWR" >> dragon.txt
