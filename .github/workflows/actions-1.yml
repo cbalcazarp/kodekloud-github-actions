@@ -9,26 +9,5 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: List and Read files
-              run: |
-                echo "Welcome to my first GitHub Action Workflow!"
-                ls -lha
-                cat README.md || echo "README.md not found"
-
-            - name: Install cowsay
-              run: sudo apt-get install -y cowsay
-
-            - name: Generate ASCII Artwork
-              run: cowsay -f dragon "Run for cover, Iam a DRAGON... RAWR" >> dragon.txt
-
-            - name: Test file exists
-              run: |
-                if [ -f dragon.txt ]; then
-                  echo "dragon.txt file created successfully."
-                else
-                  echo "dragon.txt file not found!"
-                  exit 1
-                fi
-
-            - name: Display the ASCII Artwork
-              run: cat dragon.txt
+            - name: Executing sheel script
+              run: ./scripts/ascii-script.sh
