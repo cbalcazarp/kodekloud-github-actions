@@ -20,3 +20,15 @@ jobs:
 
             - name: Generate ASCII Artwork
               run: cowsay -f dragon "Run for cover, Iam a DRAGON... RAWR" >> dragon.txt
+
+            - name: Test file exists
+              run: |
+                if [ -f dragon.txt ]; then
+                  echo "dragon.txt file created successfully."
+                else
+                  echo "dragon.txt file not found!"
+                  exit 1
+                fi
+
+            - name: Display the ASCII Artwork
+              run: cat dragon.txt
