@@ -1,0 +1,16 @@
+name: My First GitHub Action Workflow
+
+on: [push]
+
+jobs:
+    first-action-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: List files in repository
+              run: ls -lha
+
+            - name: Read README.md file
+              run: cat README.md || echo "README.md not found"
