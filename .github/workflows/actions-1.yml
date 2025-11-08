@@ -9,5 +9,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Executing sheel script
-              run: ./scripts/ascii-script.sh
+            - name: Executing shell script
+              run: |
+                chmod +x ./scripts/ascii-script.sh
+                ./scripts/ascii-script.sh
