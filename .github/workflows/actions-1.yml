@@ -9,8 +9,11 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: List files in repository
-              run: ls -lha
+            - name: List and Read files
+              run: |
+                echo "Welcome to my first GitHub Action Workflow!"
+                ls -lha
+                cat README.md || echo "README.md not found"
 
-            - name: Read README.md file
-              run: cat README.md || echo "README.md not found"
+            - name: Generate ASCII Artwork
+              run: cowsay -f dragon "Run for cover, Iam a DRAGON... RAWR" >> dragon.txt
